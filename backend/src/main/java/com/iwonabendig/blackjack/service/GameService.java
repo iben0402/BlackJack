@@ -1,5 +1,7 @@
 package com.iwonabendig.blackjack.service;
 
+import com.iwonabendig.blackjack.exception.GameAlreadyOverException;
+import com.iwonabendig.blackjack.exception.GameNotInitializedException;
 import com.iwonabendig.blackjack.model.Deck;
 import com.iwonabendig.blackjack.model.GameState;
 import com.iwonabendig.blackjack.model.enums.GameStatus;
@@ -35,10 +37,10 @@ public class GameService {
 
     public GameState hit() {
         if (currentGame == null) {
-            throw new IllegalStateException("Game hasn't been initialized");
+            throw new GameNotInitializedException("Game hasn't been initialized");
         }
         if (currentGame.getGameStatus() != GameStatus.PLAYING) {
-            throw new IllegalStateException("Can't hit when game is over");
+            throw new GameAlreadyOverException("Can't hit when game is over");
         }
 
         currentGame.getPlayerHand().addCard(currentGame.dealCard());
@@ -51,10 +53,10 @@ public class GameService {
 
     public GameState stand() {
         if (currentGame == null) {
-            throw new IllegalStateException("Game hasn't been initialized");
+            throw new GameNotInitializedException("Game hasn't been initialized");
         }
         if (currentGame.getGameStatus() != GameStatus.PLAYING) {
-            throw new IllegalStateException("Can't stand when game is over");
+            throw new GameAlreadyOverException("Can't stand when game is over");
         }
 
         while (currentGame.getDealerHand().calculateTotal() < 17) {
