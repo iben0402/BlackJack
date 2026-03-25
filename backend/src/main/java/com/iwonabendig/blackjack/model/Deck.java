@@ -1,5 +1,8 @@
 package com.iwonabendig.blackjack.model;
 
+import com.iwonabendig.blackjack.model.enums.Rank;
+import com.iwonabendig.blackjack.model.enums.Suit;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

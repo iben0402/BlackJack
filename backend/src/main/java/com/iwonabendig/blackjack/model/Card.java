@@ -1,5 +1,7 @@
 package com.iwonabendig.blackjack.model;
 
+import com.iwonabendig.blackjack.model.enums.Rank;
+import com.iwonabendig.blackjack.model.enums.Suit;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

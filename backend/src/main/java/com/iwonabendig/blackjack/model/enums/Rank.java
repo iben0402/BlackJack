@@ -1,4 +1,4 @@
-package com.iwonabendig.blackjack.model;
+package com.iwonabendig.blackjack.model.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

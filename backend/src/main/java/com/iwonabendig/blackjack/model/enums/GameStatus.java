@@ -1,4 +1,4 @@
-package com.iwonabendig.blackjack.model;
+package com.iwonabendig.blackjack.model.enums;
 
 public enum GameStatus {
     PLAYING,
