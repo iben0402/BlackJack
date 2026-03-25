@@ -21,9 +21,9 @@ public class Hand {
     public int calculateTotal() {
         int totalValue = 0;
         int acesCount = 0;
-        for(Card card : cards) {
+        for (Card card : cards) {
             totalValue += card.getBlackjackValue();
-            if(card.getRank().equals(Rank.ACE)) acesCount++;
+            if (card.getRank().equals(Rank.ACE)) acesCount++;
         }
 
         for (int i = 0; i < acesCount; i++) {
